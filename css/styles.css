@@ -2,8 +2,13 @@ body {
   background-image:url(../img/space.jpg);
 }
 
+.well{
+  background-color: #FFF;
+  margin-top: 30px;
+}
+
 .jumbotron {
-  color:#e4f404;
+  color:#FFF;
   background-color: #000;
 
 }
@@ -12,12 +17,24 @@ body {
   float: right;
   height: 200px;
   width: 200px;
-  border: 10px solid #e4f404;
+  border: 10px solid #FFF;
   border-radius: 50%;
+  box-shadow: 5px 5px 2px #888888;
 }
 
-.well{
-  background-color: #FFF;
+.jumbotron h1 {
+  font-family: impact;
+  text-align: center;
+  text-shadow: 5px 5px 2px #888888;
+}
+
+#ruby, #java, #csharp, #any {
+  display: none;
+}
+
+#ruby img, #java img, #csharp img, #any img {
+  width: 350px;
+  height: 350px;
 }
 
 label {
@@ -36,11 +53,6 @@ button:hover {
   background-color: #e4f404;
 }
 
-#ruby, #java, #csharp, #any {
-  display: none;
-}
-
-#ruby img, #java img, #csharp img, #any img {
-  width: 350px;
-  height: 350px;
+h2 {
+  font-size: 4em;
 }
