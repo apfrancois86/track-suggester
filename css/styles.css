@@ -12,6 +12,6 @@ button {
   margin-top: 15px;
 }
 
-#ruby, #java, #csharp {
+#ruby, #java, #csharp, #any {
   display: none;
 }

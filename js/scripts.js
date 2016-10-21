@@ -52,6 +52,8 @@ $(function(){
          $("csharp").show();
        } else if (javaCount > (rubyCount || cCount)) {
          $("java").show();
+       } else if (rubyCount === javaCount && javaCount > cCount && rubyCount > cCount || cCount === javaCount && javaCount > rubyCount && cCount > rubyCount || cCount === rubyCount && rubyCount > javaCount && cCount > javaCount) {
+         $("#any").show();
        }
     };
 }
@@ -79,19 +81,13 @@ $(function(){
       $("#java").hide();
       $("#ruby").hide();
       $("form#track").hide();
-    } else (
-      prompt
-    )
-
-
+    } else if (rubyCount === javaCount && javaCount > cCount && rubyCount > cCount || cCount === javaCount && javaCount > rubyCount && cCount > rubyCount || cCount === rubyCount && rubyCount > javaCount && cCount > javaCount) {
+      $("#any").show();
+      $("#csharp").hide();
+      $("#java").hide();
+      $("#ruby").hide();
+      $("form#track").hide();
+    }
 
   });
 });
-
-
-// var nameInput = $("#name").val();
-// var sizeInput = $("#size").val();
-// var softwareInput = $("#software").val();
-// var appInput = $("#app").val();
-// var comInput = $("input:radio[name=compiler_interpreter]:checked").val();
-// var platformInput = $("input:radio[name=platform]:checked").val();
