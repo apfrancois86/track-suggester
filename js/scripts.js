@@ -67,22 +67,22 @@ $(function(){
     calculate();
 
     if (rubyCount > (cCount || javaCount)) {
-      $("#ruby").show();
+      $("#ruby").fadeIn();
       $("#csharp").hide();
       $("#java").hide();
       $("form#track").hide();
     } else if (javaCount > (cCount || rubyCount)) {
-      $("#java").show();
+      $("#java").fadeIn();
       $("#csharp").hide();
       $("#ruby").hide();
       $("form#track").hide();
     } else if (cCount > (javaCount || rubyCount)) {
-      $("#csharp").show();
+      $("#csharp").fadeIn();
       $("#java").hide();
       $("#ruby").hide();
       $("form#track").hide();
     } else if (rubyCount === javaCount && javaCount > cCount && rubyCount > cCount || cCount === javaCount && javaCount > rubyCount && cCount > rubyCount || cCount === rubyCount && rubyCount > javaCount && cCount > javaCount) {
-      $("#any").show();
+      $("#any").fadeIn();
       $("#csharp").hide();
       $("#java").hide();
       $("#ruby").hide();
