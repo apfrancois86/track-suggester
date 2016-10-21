@@ -11,3 +11,11 @@ label {
 button {
   margin-top: 15px;
 }
+
+#ruby, #java, #csharp {
+  display: none;
+}
+
+#ruby img, #java img, #csharp img {
+  float:right;
+}
