@@ -6,61 +6,78 @@ $(function(){
 
     var calculate = function() {
     //question 1
-      if($("input#size").val() === "Large Established Business") {
+      if($("#size").val() === "big") {
         cCount++;
-      } else if ($("input#size").val() === "Small Start-up") {
+      } else if ($("#size").val() === "small") {
         rubyCount++;
-      } else if ($("input#size").val() === "No Preference") {
+      } else if ($("#size").val() === "other") {
         javaCount++;
       }
     //question 2
-      if($("input#software").val() === "Enterprise Business Software") {
+      if($("#software").val() === "enterprise") {
         cCount++;
-      } else if ($("input#software").val() === "Interactive Web Applications") {
+      } else if ($("#software").val() === "web") {
         rubyCount++;
-      } else if ($("input#software").val() === "Android User-Interfaces") {
+      } else if ($("#software").val() === "android") {
         javaCount++;
       }
     //question 3
-      if($("input#size").val() === "Large Established Business") {
+      if($("#app").val() === "other") {
         cCount++;
-      } else if ($("input#size").val() === "Small Start-up") {
+      } else if ($("#app").val() === "dynamic") {
         rubyCount++;
-      } else if ($("input#size").val() === "No Preference") {
+      } else if ($("#app").val() === "static") {
         javaCount++;
       }
     //question 4
-      if($("input#size").val() === "Large Established Business") {
+      if($("input:radio[name=compiler_interpreter]:checked").val() === "compiler") {
         cCount++;
-      } else if ($("input#size").val() === "Small Start-up") {
+      } else if ($("input:radio[name=compiler_interpreter]:checked").val() === "interpreter") {
         rubyCount++;
-      } else if ($("input#size").val() === "No Preference") {
+      } else if ($("input:radio[name=compiler_interpreter]:checked").val() === "compiler") {
         javaCount++;
       }
     //question 5
-      if($("input#size").val() === "Large Established Business") {
+      if($("input:radio[name=platform]:checked").val() === "somewhat") {
         cCount++;
-      } else if ($("input#size").val() === "Small Start-up") {
+      } else if ($("input:radio[name=platform]:checked").val() === "not") {
         rubyCount++;
-      } else if ($("input#size").val() === "No Preference") {
+      } else if ($("input:radio[name=platform]:checked").val() === "very") {
         javaCount++;
       }
+    };
 });
 
 
 
 //front-end logic
 $(document).ready(function(){
-  $("form#track").submit(function(event){
+  $("#track").submit(function(event){
     event.preventDefault();
 
-    var nameInput = $("#name").val();
-    var sizeInput = $("#size").val();
-    var softwareInput = $("#software").val();
-    var appInput = $("#app").val();
-    var comInput = $("input:radio[name=compiler_interpreter]:checked").val();
-    var platformInput = $("input:radio[name=platform]:checked").val();
+    calculate();
 
+    if (rubyCount > (cCount || javaCount)) {
+      $("#ruby").show();
+      $("#csharp").hide();
+      $("#java").hide();
+    } else if (javaCount > (cCount || rubyCount)) {
+      $("#java").show();
+      $("#csharp").hide();
+      $("#ruby").hide();
+    } else if (cCount > (javaCount || rubyCount)) {
+      $("#csharp").show();
+      $("#java").hide();
+      $("#ruby").hide();
+    }
 
   });
 });
+
+
+// var nameInput = $("#name").val();
+// var sizeInput = $("#size").val();
+// var softwareInput = $("#software").val();
+// var appInput = $("#app").val();
+// var comInput = $("input:radio[name=compiler_interpreter]:checked").val();
+// var platformInput = $("input:radio[name=platform]:checked").val();
