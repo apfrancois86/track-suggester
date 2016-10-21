@@ -1,6 +1,12 @@
 body {
   background-image:url(../img/space.jpg);
 }
+
+.jumbotron {
+  color:#e4f404;
+  background-color: #000;
+}
+
 .jumbotron img {
   float: right;
   height: 200px;
@@ -8,9 +14,8 @@ body {
   border: 10px solid #e4f404;
 }
 
-.jumbotron {
-  color:#e4f404;
-  background-color: #000;
+.well{
+  background-color: #FFF;
 }
 
 label {
@@ -21,7 +26,12 @@ button {
   margin-top: 15px;
   height: 100px;
   width: 200px;
+  background-color: #000;
   color: #FFF;
+}
+
+button:hover {
+  background-color: #e4f404;
 }
 
 #ruby, #java, #csharp, #any {
