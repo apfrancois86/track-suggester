@@ -56,8 +56,7 @@ $(function(){
          $("#any").show();
        }
     };
-}
-
+};
 
 
 //front-end logic
@@ -66,6 +65,7 @@ $(function(){
     var nameInput = $("#name").val();
 
     calculate();
+    
     if(nameInput) {
       if (rubyCount > (cCount || javaCount)) {
         $("#ruby").fadeIn();
@@ -90,7 +90,7 @@ $(function(){
         $("form#track").hide();
       }
     } else {
-      alert("Please enter your name");
+      alert("Enter your name you must!");
         $("#name").parent().addClass("has-error");
         return false;
     }

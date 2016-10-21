@@ -5,6 +5,7 @@ body {
 .jumbotron {
   color:#e4f404;
   background-color: #000;
+
 }
 
 .jumbotron img {
@@ -12,6 +13,7 @@ body {
   height: 200px;
   width: 200px;
   border: 10px solid #e4f404;
+  border-radius: 50%;
 }
 
 .well{
