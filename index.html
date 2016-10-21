@@ -23,25 +23,72 @@
                   <label class="control-label" for="name">Your Name: </label>
                   <input id="name" class="form-control" type="text">
                 </div><!--End form-group-->
-                <label>Size of company I want to work for:</label>
+                <label>Size of company you want to work for:</label>
                 <select class="form-control" id="size">
                   <option value="big">Large Established Business</option>
                   <option value="small">Small Start-up</option>
                   <option value="other">No Preference</option>
                 </select><!--End Select Box-->
-                <label>Type of software I want to build:</label>
+                <label>What type of software do you want to build?</label>
                 <select class="form-control" id="software">
-                  <option value="enterprise">Enterprise Bussiness Software</option>
+                  <option value="enterprise">Enterprise Business Software</option>
                   <option value="web">Interactive Web Applications</option>
                   <option value="android">Android User-Interfaces</option>
                 </select><!--End Select Box-->
               </div><!--End Column1-->
-            </div><!--End Row1-->
-            <div class="row">
-              <div class="col-md-4">
 
-              </div>
-            </div><!--End Row2-->
+              <div class="col-md-4">
+                <label>What kind of application is most appealing to you?</label>
+                <select class="form-control" id="size">
+                  <option value="static">Static</option>
+                  <option value="small">Dynamic</option>
+                  <option value="other">No Preference</option>
+                </select><!--End Select Box-->
+                <label>Compiler or Interpreter:</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="compiler_interpreter" value="compiler" checked>
+                    Compiler
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="compiler_interpreter" value="interpreter">
+                    Interpreter
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="compiler_interpreter" value="either">
+                    No Preference
+                  </label>
+                </div>
+              </div><!--End Column2-->
+
+              <div class="col-md-4">
+                <label>How Important is Platform Compatability to you?</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="platform" value="compiler" checked>
+                    Very Important
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="platform" value="interpreter">
+                    Somewhat Important
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="platform" value="either">
+                    Not Important
+                  </label>
+                </div>
+                <button type="submit" class="btn">Find My Track!</button>
+              </div><!--End Column3-->
+
+            </div><!--End Row-->
           </div><!--End trackForm-->
         </form><!--End Form-->
       </div><!--End Well-->
