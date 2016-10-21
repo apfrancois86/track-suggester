@@ -3,3 +3,7 @@
   height: 150px;
   width: 150px;
 }
+
+label {
+  padding-top: 15px;
+}
