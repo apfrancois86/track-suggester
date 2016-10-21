@@ -63,31 +63,49 @@ $(function(){
 //front-end logic
   $("form#track").submit(function(event){
     event.preventDefault();
+    var nameInput = $("#name").val();
 
     calculate();
-
-    if (rubyCount > (cCount || javaCount)) {
-      $("#ruby").fadeIn();
-      $("#csharp").hide();
-      $("#java").hide();
-      $("form#track").hide();
-    } else if (javaCount > (cCount || rubyCount)) {
-      $("#java").fadeIn();
-      $("#csharp").hide();
-      $("#ruby").hide();
-      $("form#track").hide();
-    } else if (cCount > (javaCount || rubyCount)) {
-      $("#csharp").fadeIn();
-      $("#java").hide();
-      $("#ruby").hide();
-      $("form#track").hide();
-    } else if (rubyCount === javaCount && javaCount > cCount && rubyCount > cCount || cCount === javaCount && javaCount > rubyCount && cCount > rubyCount || cCount === rubyCount && rubyCount > javaCount && cCount > javaCount) {
-      $("#any").fadeIn();
-      $("#csharp").hide();
-      $("#java").hide();
-      $("#ruby").hide();
-      $("form#track").hide();
+    if(nameInput) {
+      if (rubyCount > (cCount || javaCount)) {
+        $("#ruby").fadeIn();
+        $("#csharp").hide();
+        $("#java").hide();
+        $("form#track").hide();
+      } else if (javaCount > (cCount || rubyCount)) {
+        $("#java").fadeIn();
+        $("#csharp").hide();
+        $("#ruby").hide();
+        $("form#track").hide();
+      } else if (cCount > (javaCount || rubyCount)) {
+        $("#csharp").fadeIn();
+        $("#java").hide();
+        $("#ruby").hide();
+        $("form#track").hide();
+      } else if (rubyCount === javaCount && javaCount > cCount && rubyCount > cCount || cCount === javaCount && javaCount > rubyCount && cCount > rubyCount || cCount === rubyCount && rubyCount > javaCount && cCount > javaCount) {
+        $("#any").fadeIn();
+        $("#csharp").hide();
+        $("#java").hide();
+        $("#ruby").hide();
+        $("form#track").hide();
+      }
+    } else {
+      alert("Please enter your name");
+        $("#name").parent().addClass("has-error");
+        return false;
     }
 
   });
+    $("#ruby button").click(function(){
+      location.reload();
+    });
+    $("#java button").click(function(){
+      location.reload();
+    });
+    $("#csharp button").click(function(){
+      location.reload();
+    });
+    $("#any button").click(function(){
+      location.reload();
+    });
 });

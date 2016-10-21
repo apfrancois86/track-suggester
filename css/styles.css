@@ -19,6 +19,9 @@ label {
 
 button {
   margin-top: 15px;
+  height: 100px;
+  width: 200px;
+  color: #FFF;
 }
 
 #ruby, #java, #csharp, #any {
