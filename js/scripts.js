@@ -45,14 +45,21 @@ $(function(){
       } else if ($("input:radio[name=platform]:checked").val() === "very") {
         javaCount++;
       }
+      var count = function() {
+       if (rubyCount > (javaCount || cCount)) {
+         $("ruby").show();
+       } else if (cCount > (javaCount || rubyCount)) {
+         $("csharp").show();
+       } else if (javaCount > (rubyCount || cCount)) {
+         $("java").show();
+       }
     };
-});
+}
 
 
 
 //front-end logic
-$(document).ready(function(){
-  $("#track").submit(function(event){
+  $("form#track").submit(function(event){
     event.preventDefault();
 
     calculate();
@@ -61,15 +68,22 @@ $(document).ready(function(){
       $("#ruby").show();
       $("#csharp").hide();
       $("#java").hide();
+      $("form#track").hide();
     } else if (javaCount > (cCount || rubyCount)) {
       $("#java").show();
       $("#csharp").hide();
       $("#ruby").hide();
+      $("form#track").hide();
     } else if (cCount > (javaCount || rubyCount)) {
       $("#csharp").show();
       $("#java").hide();
       $("#ruby").hide();
-    }
+      $("form#track").hide();
+    } else (
+      prompt
+    )
+
+
 
   });
 });
